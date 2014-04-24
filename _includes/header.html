@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Jekyll</title>    
+        <meta charset="utf-8">
+        <meta name="robots" content="index, follow"> 
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+    {% if site.lang == "pl" %}
+        {% capture link1 %}{{ site.baseurl_root }}/en{{ page.url}}{% endcapture %}
+        <a href="{{ link1 }}" >{% t global.english %}</a>
+    {% else if site.lang == "en" %}
+        {% capture link2 %}{{ site.baseurl_root }}{{ page.url  }}{% endcapture %}
+        <a href="{{ link2 }}" >{% t global.polish %}</a>
+    {% endif %}
+
